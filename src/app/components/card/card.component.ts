@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { INews } from 'src/app/interfaces/news/news.interface';
+import { NewsService } from 'src/app/services/news/news.service';
 
 @Component({
   selector: 'app-card',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+  news: INews[];
 
-  constructor() { }
+  constructor(private newsService: NewsService) {}
+
+  @Input() data;
 
   ngOnInit(): void {
+    this.news = [];
+    this.initHttp();
   }
 
+  async initHttp(): Promise<void> {
+    const items = await this.newsService.getNews();
+    this.news = items;
+  }
 }

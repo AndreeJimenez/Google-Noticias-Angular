@@ -1,7 +1,9 @@
-<div id="card">
-  <div class="header-section">
-    <p class="title">Joe Biden invita al doctor Fauci a formar parte de su equipo contra Covid-19</p>
-    <img src="../../../assets/images/logo-google.svg" alt="">
+<div *ngFor="let item of news; index as index">
+  <div id="card">
+    <div class="header-section">
+      <p class="title">{{ item.title }}</p>
+      <img src="{{ item.image }}" alt="Imagen Noticia" />
+    </div>
+    <div class="descripcion">{{ item.description }}</div>
   </div>
-  <div class="descripcion">El presidente electo de Estados Unidos, Joe Biden, dijo el jueves que le pidió al principal especialista en enfermedades infecciosas del gobierno, Anthony Fauci, que permaneciera en su cargo y se una a su equipo Covid-19 después de que llegue a la Casa Blanca.</div>
 </div>

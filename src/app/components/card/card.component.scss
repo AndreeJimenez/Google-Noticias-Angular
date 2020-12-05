@@ -11,6 +11,7 @@
 
 #card .header-section {
   display: flex;
+  justify-content: space-between;
 }
 #card .header-section .title {
   font-size: 1.125rem;
