@@ -1,0 +1,43 @@
+img {
+  width: 74px;
+  height: 24px;
+}
+
+#header {
+  webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+  
+  padding: 8px;
+}
+
+.container i {
+  font-size: 20px;
+  margin: 0 4px;
+  padding: 12px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+}
+
+.container {
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.container span{
+  padding-left: 4px;
+  color: #5f6368;
+  display: inline-block;
+  font-family: 'Product Sans',Arial,sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  position: relative;
+  top: -1.5px;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 900px) {
+
+}

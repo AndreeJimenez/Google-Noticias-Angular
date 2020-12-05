@@ -1,0 +1,33 @@
+#card {
+  min-height: 130px;
+  min-width: 375px;
+  max-width: 720px;
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+#card .header-section {
+  display: flex;
+}
+#card .header-section .title {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  color: #202124;
+  font-weight: bold;
+}
+#card .header-section img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+#card .descripcion {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #202124;
+  max-width: 80%;
+}
