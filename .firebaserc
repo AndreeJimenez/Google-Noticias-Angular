@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "noticias-f3e62": {
+      "hosting": {
+        "GoogleNoticias": [
+          "noticias-f3e62"
+        ]
+      }
+    }
+  }
+}

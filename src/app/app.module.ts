@@ -12,9 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 
 // Modulos de firebase
-// import { AngularFireModule } from '@angular/fire';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
-// import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -25,12 +25,10 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     ComponentsModule,
     HttpClientModule,
-    // // Conexión con un proyecto de firebase
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    // // Módulo para trabajar con la base de datos
-    // AngularFirestoreModule,
-    // // Módulo para alamcenar archivos en firebase
-    // AngularFireStorageModule,
+    
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
