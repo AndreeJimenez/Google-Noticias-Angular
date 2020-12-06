@@ -51,9 +51,6 @@ export class NewComponent implements OnInit {
 
   async iniValuesHttp(): Promise<void> {
     try {
-      /* this.params = await this.activatedRoute.params.pipe(take(1)).toPromise();
-      this.isNew = this.params.teacherId === 'new' ? true : false; */
-
       if (!this.isNew) {
         const news = await this.newsService.getNewsById(this.params.newsId).toPromise();
         if (news.data()) {
