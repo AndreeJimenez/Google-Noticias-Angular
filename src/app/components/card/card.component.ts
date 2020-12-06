@@ -44,7 +44,7 @@ export class CardComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Método que redirecciona al componeten t-new para poder ser editado
+   * Método que redirecciona al componeten new para poder ser editado
    * @param news Objeto de tipo news
    */
   onUpdate(news: INews): void {

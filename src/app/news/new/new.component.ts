@@ -78,7 +78,7 @@ export class NewComponent implements OnInit {
       const news = await firebaseResponse.get();
       let path = null;
       if (this.file) {
-        path = await this.newsService.uploadFile(`profile/${this.file.name}`, this.file);
+        path = await this.newsService.uploadFile(`news/${this.file.name}`, this.file);
         await this.newsService.updateNews(news.id, {...news.data(), newsPicture: path ? path : this.img});
       }
       this.file = null;
@@ -96,7 +96,7 @@ export class NewComponent implements OnInit {
     try {
       let path = null;
       if (this.file) {
-        path = await this.newsService.uploadFile(`profile/${this.file.name}`, this.file);
+        path = await this.newsService.uploadFile(`news/${this.file.name}`, this.file);
       }
       await this.newsService.updateNews(this.params.newsId, {...this.form.value, newsPicture: path ? path : this.img});
       this.router.navigate(['/', 'home', 'news', 'tpl', 'list']);

@@ -1,4 +1,4 @@
-<div [formGroup]="form">
+<div class="form-container" [formGroup]="form">
   <div
     class="form-group"
     style="
@@ -8,51 +8,62 @@
       align-items: center;
     "
   >
-    <img [src]="img" alt="" width="150px" height="150px" />
-    <input class="btn btn-primary" type="file" (change)="onChange($event)" />
+    <img [src]="img" alt="" class="form-container__img" />
+    <div class="form-container__input">
+      Subir Archivo<input type="file" (change)="onChange($event)" />
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="titleInput">Título</label>
+  <div class="form__group field">
+    <label class="form__label" for="titleInput">Título</label>
     <input
       formControlName="title"
       type="text"
-      class="form-control"
+      class="form__field"
       id="titleInput"
       placeholder="Encabesado de la Noticia"
     />
     <div
-      *ngIf="this.form.get('title').touched && this.form.get('title').invalid">
+      *ngIf="this.form.get('title').touched && this.form.get('title').invalid"
+    >
       Oops! Olvidaste agregar el Título
     </div>
   </div>
-  <div class="form-group">
-    <label for="descriptionInput">Descripción</label>
+  <div class="form__group field">
+    <label class="form__label" for="descriptionInput">Descripción</label>
     <input
       formControlName="description"
       type="text"
-      class="form-control"
+      class="form__field"
       id="descriptionInput"
       placeholder="¿Qué sucedió?"
     />
     <div
-      *ngIf="this.form.get('description').touched && this.form.get('description').invalid">
+      *ngIf="
+        this.form.get('description').touched &&
+        this.form.get('description').invalid
+      "
+    >
       Oops! Olvidaste agregar la descripción
     </div>
   </div>
 
-  <button
-    *ngIf="this.isNew; else newsUpdate"
-    (click)="onAdd()"
-    type="submit"
-    class="btn btn-primary"
-  >
-    Agregar
-  </button>
-  
-  <ng-template #newsUpdate>
-    <button (click)="onUpdate()" type="submit" class="btn btn-primary">
-      Actualizar
-    </button>
-  </ng-template>
+  <div class="btn__container">
+    <a
+      *ngIf="this.isNew; else newsUpdate"
+      (click)="onAdd()"
+      type="submit"
+      class="btn btn--save"
+    >
+      <span class="gradient"></span>
+      Agregar
+    </a>
+
+    <ng-template #newsUpdate>
+      <a (click)="onUpdate()" type="submit" class="btn btn--save">
+        <span class="btn--gradient"></span>
+        Actualizar
+      </a>
+    </ng-template>
+  </div>
 </div>
