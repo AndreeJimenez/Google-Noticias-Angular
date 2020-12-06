@@ -153,6 +153,11 @@ $Dark_gray: #5f6368;
     color: white;
     background: #1967d2;
     transition: all 0.2s ease-out 0s;
+    transform: scale(.9);
+
+    &:hover {
+      transform: scale(1);
+    }
   }
 
   &--gradient {

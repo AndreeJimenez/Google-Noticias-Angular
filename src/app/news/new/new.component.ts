@@ -46,7 +46,7 @@ export class NewComponent implements OnInit {
       () => { } // Complete
     );
 
-    this.iniValuesHttp();
+    // this.iniValuesHttp();
   }
 
   async iniValuesHttp(): Promise<void> {
@@ -55,8 +55,8 @@ export class NewComponent implements OnInit {
         const news = await this.newsService.getNewsById(this.params.newsId).toPromise();
         if (news.data()) {
           this.form = new FormGroup({
-            title: new FormControl(news.data(), [Validators.required]),
-            description: new FormControl(news.data(), [Validators.required]),
+            title: new FormControl(news.data().title, [Validators.required]),
+            description: new FormControl(news.data().description, [Validators.required]),
           });
           this.img = news.data().newsPicture ? news.data().newsPicture : this.img;
         }
