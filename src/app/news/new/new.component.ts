@@ -46,7 +46,7 @@ export class NewComponent implements OnInit {
       () => { } // Complete
     );
 
-    // this.iniValuesHttp();
+    this.iniValuesHttp();
   }
 
   async iniValuesHttp(): Promise<void> {

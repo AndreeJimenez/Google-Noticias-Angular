@@ -9,6 +9,10 @@
   box-sizing: border-box;
   margin-bottom: 16px;
   display: flex;
+
+  &:hover .actions {
+    display: flex;
+  }
 }
 
 #card .text-section {
@@ -45,15 +49,18 @@
 .img-section .actions {
   flex: 1;
   font-size: 24px;
-  display: flex;
+  display: none;
   justify-content: flex-end;
   align-items: flex-end;
   margin-top: 15px;
 }
+.img-section .actions i:hover {
+  transform: scale(1.1);
+}
 .img-section .actions .delete {
   color: rgb(190, 8, 8);
+  margin: 0 12px;
 }
 .img-section .actions .edit {
   color: rgb(110, 110, 238);
-  margin: 0 12px;
 }
