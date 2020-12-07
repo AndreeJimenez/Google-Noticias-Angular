@@ -5,6 +5,7 @@ import { INews } from 'src/app/interfaces/news/news.interface';
 
 import { environment } from 'src/environments/environment';
 import firebase from 'firebase/app';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 
@@ -37,6 +38,7 @@ export class NewsService {
 
   constructor(
     private http: HttpClient,
+    private angularFireAuth: AngularFireAuth,
     private angularFirestore: AngularFirestore,
     private angularFireStorage: AngularFireStorage,
   ) {
@@ -99,5 +101,9 @@ export class NewsService {
   async uploadFile(path: string, data: any): Promise<any> {
     await this.angularFireStorage.upload(path, data);
     return await this.angularFireStorage.ref(path).getDownloadURL().toPromise();
+  }
+
+  loginWithGoogle(): Promise<firebase.auth.UserCredential> {
+    return this.angularFireAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 }

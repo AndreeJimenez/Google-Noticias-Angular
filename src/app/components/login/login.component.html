@@ -1,0 +1,9 @@
+<div class="login">
+  <p *ngIf="!this.isLogged; else loggedUser" class="login--text" (click)="this.onLoginWithGoogle()">Iniciar Sesion</p>
+  <ng-template #loggedUser>
+    <div class="logged">
+      <p class="logged--user">{{ this.userGoogle.user.displayName }}</p>
+      <img class="logged--image" src="{{ this.userGoogle.user.photoURL }}" alt="Profile Photo">
+    </div>
+  </ng-template>
+</div>

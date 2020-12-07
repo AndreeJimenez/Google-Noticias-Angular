@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 
 // Modulos de firebase
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
@@ -27,6 +28,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     HttpClientModule,
     
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
   ],

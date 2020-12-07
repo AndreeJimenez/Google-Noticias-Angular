@@ -5,13 +5,15 @@ import { CardComponent } from './card/card.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { ModalComponent } from './modal/modal.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     CardComponent,
     SidebarComponent,
     ModalComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   exports: [
     CardComponent,
